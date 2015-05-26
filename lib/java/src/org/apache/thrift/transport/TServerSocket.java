@@ -35,6 +35,7 @@ import java.net.SocketException;
 public class TServerSocket extends TServerTransport {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(TServerSocket.class.getName());
+  private static final int DEFAULT_READ_TIMEOUT = 20000;
 
   /**
    * Underlying ServerSocket object
@@ -59,7 +60,7 @@ public class TServerSocket extends TServerTransport {
    * Creates a server socket from underlying socket object
    */
   public TServerSocket(ServerSocket serverSocket) throws TTransportException {
-    this(serverSocket, 0);
+    this(serverSocket, DEFAULT_READ_TIMEOUT);
   }
 
   /**
@@ -73,7 +74,7 @@ public class TServerSocket extends TServerTransport {
    * Creates just a port listening server socket
    */
   public TServerSocket(int port) throws TTransportException {
-    this(port, 0);
+    this(port, DEFAULT_READ_TIMEOUT);
   }
 
   /**
@@ -84,7 +85,7 @@ public class TServerSocket extends TServerTransport {
   }
 
   public TServerSocket(InetSocketAddress bindAddr) throws TTransportException {
-    this(bindAddr, 0);
+    this(bindAddr, DEFAULT_READ_TIMEOUT);
   }
 
   public TServerSocket(InetSocketAddress bindAddr, int clientTimeout) throws TTransportException {
