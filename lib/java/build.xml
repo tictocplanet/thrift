@@ -22,7 +22,7 @@
   
   <description>Thrift Build File</description>
   <property name="thrift.root" location="../../"/>
-  <property name="thrift.artifactid" value="libthrift"/>
+  <property name="thrift.artifactid" value="libthrift-revolution"/>
 
   <!-- Include the base properties file -->
   <property file="${basedir}/build.properties" />
